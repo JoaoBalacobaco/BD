@@ -1,0 +1,83 @@
+Comandos DML INSERT, SELECT, UPDATE e DELETE.
+
+Exercícios Teóricos
+
+1. Explique os comandos DML:
+
+a) O que significa a sigla DML e quais são os principais comandos dessa linguagem?
+	comandos de manipulação da dados
+
+b) Em quais situações práticas você usaria os comandos INSERT, UPDATE, SELECT e DELETE?
+	- isert: para inserir dados a tabela
+	- update: para autualizar algum campo na tabela
+	- select: para selecionar alguma tabela
+	- delet: para deletar algum campo da tabela
+
+2. Diferença entre comandos DML e DDL:
+
+Explique a diferença entre os comandos DML (Linguagem de Manipulação de Dados) e DDL (Linguagem de Definição de Dados). Dê exemplos práticos de quando você utilizaria cada um.
+	- DML: eu uso so para deletar, atualizar alguma tabela, iserir algum dado,selecionar algo
+	- DDl: e usado como create table, alter table e drop
+
+3. Uso de WHERE no UPDATE e DELETE:
+
+Por que é importante usar uma cláusula WHERE nos comandos UPDATE e DELETE? O que pode acontecer se você não usar?
+	e importante usar porque tem como voce filtrar o que quer alterar 
+
+4. Uso de SELECT em tabelas grandes:
+
+Quais são as boas práticas para otimizar consultas SELECT em tabelas com grande volume de dados?
+	usar o where para filtrar os dados
+
+Exercícios Práticos
+
+1. Criação da tabela Primeiro, crie uma tabela que servirá de base para os exercícios:
+
+CREATE TABLE clientes (
+  id INT PRIMARY KEY AUTO_INCREMENT,
+  nome VARCHAR(100),
+  email VARCHAR(100),
+  idade INT,
+  cidade VARCHAR(50)
+);
+
+
+Exercício 1: INSERT
+
+Adicione os seguintes registros na tabela clientes:
+
+1, João da Silva, joao@gmail.com, 30, São Paulo
+
+
+2, Maria Oliveira, maria@yahoo.com, 25, Campinas
+
+
+3, Pedro Souza, pedro@outlook.com, 35, Rio de Janeiro
+
+
+Exercício 2: SELECT
+
+Selecione todos os clientes que moram em São Paulo.
+
+Selecione apenas o nome e email de clientes que têm mais de 30 anos.
+
+
+Exercício 3: UPDATE
+
+Atualize a cidade do cliente "Maria Oliveira" para "Sorocaba".
+
+Altere o email de todos os clientes que moram no Rio de Janeiro para cliente_rj@dominio.com.
+
+
+Exercício 4: DELETE
+
+Delete o cliente que tem o email "joao@gmail.com".
+
+Delete todos os clientes que têm menos de 30 anos.
+
+
+Exercício 5: Desafio Extra 
+
+Crie um novo campo na tabela clientes chamado status do tipo VARCHAR(10) e preencha todos os clientes existentes com o valor "ativo".
+
+Agora, selecione apenas os clientes cujo status seja "ativo", e depois atualize o status de todos para "inativo".
