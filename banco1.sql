@@ -60,18 +60,24 @@ insert into pedido(cliente_id,hora,valor) values (2,'2016-12-18 19:00',45.00);
 insert into pedido(cliente_id,hora,valor) values (3,'2016-12-18 21:12',44.00);
 insert into pedido(cliente_id,hora,valor) values (4,'2016-12-19 22:22',72.00);
 
-insert into item_pedido(pizza_id,quantidade,valor) values (1,1,1,15.00);
-insert into item_pedido(pizza_id,quantidade,valor) values (1,4,1,17.00);
-insert into item_pedido(pizza_id,quantidade,valor) values (1,3,2,40.00);
-insert into item_pedido(pizza_id,quantidade,valor) values (1,5,1,22.00);
-insert into item_pedido(pizza_id,quantidade,valor) values (1,3,1,20.00);
-insert into item_pedido(pizza_id,quantidade,valor) values (1,5,3,22.00);
-insert into item_pedido(pizza_id,quantidade,valor) values (1,1,2,45.00);
-insert into item_pedido(pizza_id,quantidade,valor) values (1,5,2,44.00);
-insert into item_pedido(pizza_id,quantidade,valor) values (1,1,1,30.00);
-insert into item_pedido(pizza_id,quantidade,valor) values (1,3,1,20.00);
-insert into item_pedido(pizza_id,quantidade,valor) values (1,5,1,22.00);
-insert into item_pedido(pizza_id,quantidade,valor) values (1,4,2,34.00);
+insert into item_pedido(pizza_id,quantidade,valor) values (1,1,15.00);
+insert into item_pedido(pizza_id,quantidade,valor) values (4,1,17.00);
+insert into item_pedido(pizza_id,quantidade,valor) values (3,2,40.00);
+insert into item_pedido(pizza_id,quantidade,valor) values (5,1,22.00);
+insert into item_pedido(pizza_id,quantidade,valor) values (3,1,20.00);
+insert into item_pedido(pizza_id,quantidade,valor) values (5,3,22.00);
+insert into item_pedido(pizza_id,quantidade,valor) values (1,2,45.00);
 
+select * from pedido where hora = (select min(hora) from pedido);
+select * from pedido where hora = (select max(hora) from pedido); 
 
+select * from pedido where valor = (select max(valor) from pedido); 
+select * from pedido where valor = (select min(valor) from pedido); 
 
+select upper(nome) from cliente;
+
+select sum(valor) from pedido where hora like '18-12-2018%';
+
+select datediff(hora);
+
+select hora from pedido where (select datediff(min(hora),max(hora))from pedido);
